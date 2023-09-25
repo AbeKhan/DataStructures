@@ -13,7 +13,9 @@ public class App
         {
             menu();
 
+            System.out.println("Please enter a value.");
             String holder = scan.nextLine();
+            
             int input = Integer.parseInt(holder);
             switch(input)
             {
@@ -35,6 +37,16 @@ public class App
                 ID = scan.nextLine();
                 students.remove(ID);
                 break;
+            
+            case 4:
+            for (String i : students.keySet()) 
+              {
+                System.out.println("ID: " + i + " Name: " + students.get(i).getName());
+              }
+
+            case 5:
+                exit = true;
+                System.out.println("You have exited the program.");
             }
             
 
