@@ -30,12 +30,37 @@ public class App
                 break;
 
             case 2:
-                System.out.println("It works");
-
+                //System.out.println("It works");
+                System.out.println("Please enter student ID: ");
+                 ID = scan.nextLine();
+                 boolean found = false;
+                 for (String i : students.keySet()) 
+              {
+                if (ID.equals(i))
+                {
+                    System.out.println("Found student: " + "ID: " + i + " Name: " + students.get(i).getName());
+                    found = true;
+                    break;
+                }
+              }      
+              if (!found)
+              {
+                System.out.println("Student not found.");
+              }
+               
+                break;
             case 3:
                 System.out.println("Please enter student ID: ");
                 ID = scan.nextLine();
+              if(students.containsKey(ID))
+              {
+                System.out.println("Student has been removed.");
                 students.remove(ID);
+              }
+              else
+              {
+                System.out.println("ID invalid, try again.");
+              } 
                 break;
             
             case 4:
@@ -43,10 +68,11 @@ public class App
               {
                 System.out.println("ID: " + i + " Name: " + students.get(i).getName());
               }
-
+              break;
             case 5:
                 exit = true;
                 System.out.println("You have exited the program.");
+                break;
             }
             
 
